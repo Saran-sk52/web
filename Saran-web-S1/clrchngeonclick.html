@@ -1,0 +1,20 @@
+<html>
+<head>
+<title>My Doc</title>
+</head>
+<body>
+	<button onclick="changeColor()">Click</button>
+</body>
+<script>
+let colors = ["red", "blue", "darkorange","cyan"]
+
+function changeColor(){
+    let indx = Math.floor(Math.random() * 4);
+    document.body.style.backgroundColor = colors[indx]
+    console.log(colors[indx]);
+    
+}
+changeColor();
+</script>
+</html>
+

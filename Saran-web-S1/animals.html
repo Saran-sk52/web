@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .animal {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+            width: 150px;
+        }
+        .animal img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        #description {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Animal Gallery</h1>
+<div class="container">
+    <div class="animal" onclick="showDescription('dog')">
+        <img src="C:\Users\Admin\Pictures\Saved Pictures\111.jpg">
+        <p>Dog</p>
+    </div>
+    <div class="animal" onclick="showDescription('cat')">
+        <img src="https://media.istockphoto.com/id/2040984869/photo/big-eyed-naughty-cat-looking-at-the-target-from-behind-the-marble-table.webp?b=1&s=612x612&w=0&k=20&c=0COyeTVfSy9za_Ny7j7kWP27HUgMQTCMzATXBnytU2I=">
+        <p>Cat</p>
+    </div>
+    <div class="animal" onclick="showDescription('cow')">
+        <img src="https://t3.ftcdn.net/jpg/00/55/77/44/360_F_55774465_rYM3C4B2eROfNQcVUpHlx9EOPDSYJw20.jpg">
+        <p>Cow</p>
+    </div>
+    <div class="animal" onclick="showDescription('lion')">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStnm1laxARyL3L9csz9BvEUWFn0AdXmFuTSg&s">
+        <p>Lion</p>
+    </div>
+    <div class="animal" onclick="showDescription('elephant')">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1IPtnvqMa7PX7jaNRl2Bb-daTmXef8TSBHg&s">
+        <p>Elephant</p>
+    </div>
+</div>
+
+<div id="description"></div>
+
+<script>
+    function showDescription(animal) {
+        const descriptions = {
+            dog: "Dogs are loyal companions and are known for their friendliness.",
+            cat: "Cats are independent and playful animals, often kept as pets.",
+            cow: "Cows are domesticated animals known for providing milk.",
+            lion: "Lions are majestic wild animals, known as the kings of the jungle.",
+            elephant: "Elephants are the largest land animals, known for their intelligence."
+        };
+        
+        const imgUrl = {
+            dog: "C:\Users\Admin\Pictures\Saved Pictures\111.jpg",
+            cat: "https://via.placeholder.com/300?text=Cat",
+            cow: "https://cdn.pixabay.com/photo/2021/06/24/07/29/cow-6360406_640.jpg",
+            lion: "https://via.placeholder.com/300?text=Lion",
+            elephant: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8LwTBDLparzWN8SC2PCd4DM696xhfPBcCOg&s"
+        };
+
+        document.getElementById("description").innerHTML = `
+            <h2>${animal.charAt(0).toUpperCase() + animal.slice(1)}</h2>
+            <img src="${imgUrl[animal]}" alt="${animal}">
+            <p>${descriptions[animal]}</p>
+        `;
+    }
+</script>
+
+</body>
+</html>
